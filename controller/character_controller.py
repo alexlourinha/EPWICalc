@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 
+from service.calculator_service import calculate_character_stats
+
+
 app = FastAPI()
 
 
@@ -10,5 +13,5 @@ def get_character():
 
 @app.post("/character")
 def create_character(character: dict):
-    print(character.values())
-    return character
+    result = calculate_character_stats(character)
+    return result

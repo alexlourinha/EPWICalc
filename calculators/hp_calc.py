@@ -1,9 +1,9 @@
 import sqlite3
 
-database = "../data/calc_db"
+database = "data/calc_db"
 
 
-def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
+def calculate_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
 	try:
 		with sqlite3.connect(database) as conn:	
 			cursor = conn.cursor()
@@ -22,4 +22,4 @@ def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase
 		print(e)
 		
 		
-current_hp(105, "Barbarian", 671, 1.15, 3200+16987, 0.15)
+calculate_hp(105, "Barbarian", 671, 1.15, 3200+16987, 0.15)

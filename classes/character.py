@@ -1,6 +1,6 @@
 class Character:
     def __init__(self, char_class, level, past_life_1, past_life_2, vitality, strength, dexterity, magic,
-                 meridian, weapon, head, chest, legs, feet, arms, robe, belt, necklace, ring_1, ring_2, blessing,
+                 meridian, weapon, head, chest, legs, feet, arms, robe, belt, necklace, ring_1, ring_2, blessing, tome,
                  constellation, title_stats, glyph_1, glyph_2, glyph_3, glyph_4, glyph_5, glyph_6, hp, mana,
                  phys_atk, mag_atk, phys_def, mag_def, atk_rate, speed, accuracy, evasion, crit_rate, crit_damage,
                  atk_level, def_level, spirit, soulforce, stealth_level, detection_level, slaying_level, warding_level,
@@ -32,6 +32,7 @@ class Character:
         self.ring_1 = ring_1
         self.ring_2 = ring_2
         self.blessing = blessing
+        self.tome = tome
         self.constellation = constellation
         self.title_stats = title_stats
         self.glyph_1 = glyph_1

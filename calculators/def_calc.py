@@ -3,7 +3,7 @@ import sqlite3
 database = "../data/calc_db"
 
 
-def current_def(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
+def calculate_def(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
 	try:
 		with sqlite3.connect(database) as conn:	
 			cursor = conn.cursor()
@@ -22,4 +22,4 @@ def current_def(level, char_class, vit, buff_total, equip_hp, equip_perc_increas
 		print(e)
 		
 		
-current_def(105, "Barbarian", 1050, 0.35, 0, 0.05)
+calculate_def(105, "Barbarian", 1050, 0.35, 0, 0.05)
