@@ -1,6 +1,6 @@
 class Glyph:
-    def __init__(self, glyph_type, hp, spirit, mag_atk, mag_def, phys_atk, phys_def, atk_level, def_level):
-        self.glyph_type = glyph_type
+    def __init__(self, level, hp, spirit, mag_atk, mag_def, phys_atk, phys_def, atk_level, def_level):
+        self.level = level
         self.hp = hp
         self.spirit = spirit
         self.mag_atk = mag_atk

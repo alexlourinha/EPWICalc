@@ -1,0 +1,25 @@
+{
+  "name": "name",
+  "requirements": [{
+    "req_class" :"Barbarian",
+    "req_level" : 1,
+    "req_str" : 200,
+    "req_dex" : 200,
+    "req_mag" : 0,
+    "req_rep" : 300000
+  }],
+  "stats": [
+    {
+      "stat": "strength",
+      "value": 10
+    },
+    {
+      "stat": "dexterity",
+      "value": 8
+    },
+    {
+      "stat": "magic",
+      "value": 15
+    }
+  ]
+}

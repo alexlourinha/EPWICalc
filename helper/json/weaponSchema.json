@@ -1,10 +1,18 @@
 {
     "name": "Placeholder for weapon name",
     "type": "Placeholder for weapon type",
+    "atk_rate": 0.91,
+    "weapon_range": 3.50,
+    "req_class" :"Barbarian",
+    "req_level" : 1,
+    "req_str" : 200,
+    "req_dex" : 200,
+    "req_mag" : 0,
+    "req_rep" : 300000,
     "mag_atk_min": 0,
     "mag_atk_max": 0,
-    "phys_atk_min": 0,
-    "phys_atk_max": 0,
+    "phys_atk_min": 2180,
+    "phys_atk_max": 3058,
     "attributes": [
         {}
     ]

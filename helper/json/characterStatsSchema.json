@@ -51,5 +51,6 @@
     "phys_penetration": 0,
     "mag_penetration": 0,
     "casting_time": 0,
+    "reputation": 0,
     "active_buffs": []
 }

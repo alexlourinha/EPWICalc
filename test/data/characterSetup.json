@@ -1,0 +1,651 @@
+{
+  "char_class": "Barbarian",
+  "level": 105,
+  "past_life_1": 103,
+  "past_life_2": 103,
+  "vitality": 409,
+  "strength": 200,
+  "dexterity": 10,
+  "magic": 5,
+  "meridian": {
+    "hp": 273,
+    "mag_atk": 0,
+    "mag_def": 78,
+    "phys_atk": 62,
+    "phys_def": 117
+  },
+  "weapon": {
+    "name": "Might of the Dominator",
+    "type": "melee",
+    "atk_rate": 0.91,
+    "weapon_range": 3.50,
+    "req_class": "Barbarian",
+    "req_str": 300,
+    "req_dex": 50,
+    "req_mag": 0,
+    "req_rep": 300000,
+    "mag_atk_min": 0,
+    "mag_atk_max": 0,
+    "phys_atk_min": 2180,
+    "phys_atk_max": 3058,
+    "attributes": [
+      {
+        "def_lvl": 27,
+        "acc_perc": 0.41,
+        "magic": 17,
+        "phys_def": 252,
+        "vitality": 37
+      }
+    ]
+  },
+  "head": {
+    "name": "Crown of Madness",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 60,
+        "req_str": 75,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "hp",
+        "value": 2850
+      },
+      {
+        "stat": "mp",
+        "value": 600
+      },
+      {
+        "stat": "atk_level",
+        "value": 2
+      },
+      {
+        "stat": "def_level",
+        "value": 2
+      },
+      {
+        "stat": "mag_def",
+        "value": 200
+      },
+      {
+        "stat": "phys_def",
+        "value": 200
+      },
+      {
+        "stat": "speed",
+        "value": 0.10
+      },
+      {
+        "stat": "vitality",
+        "value": 48
+      },
+      {
+        "stat": "phys_atk",
+        "value": 150
+      },
+      {
+        "stat": "crit_rate",
+        "value": 1
+      }
+    ]
+  },
+  "chest": {
+    "name": "Chieftain's Breastplate(PVE)",
+    "requirements": [
+      {
+        "req_class": "Barbarian",
+        "req_level": 101,
+        "req_str": 255,
+        "req_dex": 55,
+        "req_mag": 0,
+        "req_rep": 300000
+      }
+    ],
+    "stats": [
+      {
+        "stat": "hp",
+        "value": 3030
+      },
+      {
+        "stat": "slaying_level",
+        "value": 30
+      },
+      {
+        "stat": "warding_level",
+        "value": 30
+      },
+      {
+        "stat": "mag_def",
+        "value": 1611
+      },
+      {
+        "stat": "phys_def",
+        "value": 2719
+      },
+      {
+        "stat": "max_hp",
+        "value": 0.05
+      },
+      {
+        "stat": "crit_rate",
+        "value": 2
+      },
+      {
+        "stat": "vitality",
+        "value": 63
+      }
+    ]
+  },
+  "legs": {
+    "name": "Chieftain's Greaves(PVE)",
+    "requirements": [
+      {
+        "req_class": "Barbarian",
+        "req_level": 101,
+        "req_str": 255,
+        "req_dex": 55,
+        "req_mag": 0,
+        "req_rep": 300000
+      }
+    ],
+    "stats": [
+      {
+        "stat": "hp",
+        "value": 3030
+      },
+      {
+        "stat": "int",
+        "value": -0.05
+      },
+      {
+        "stat": "slaying_level",
+        "value": 30
+      },
+      {
+        "stat": "warding_level",
+        "value": 30
+      },
+      {
+        "stat": "mag_def",
+        "value": 1354
+      },
+      {
+        "stat": "phys_def",
+        "value": 2343
+      },
+      {
+        "stat": "Strength",
+        "value": 15
+      },
+      {
+        "stat": "crit_rate",
+        "value": 2
+      },
+      {
+        "stat": "vitality",
+        "value": 48
+      }
+    ]
+  },
+  "feet": {
+    "name": "Chieftain's Boots(PVE)",
+    "requirements": [
+      {
+        "req_class": "Barbarian",
+        "req_level": 101,
+        "req_str": 255,
+        "req_dex": 55,
+        "req_mag": 0,
+        "req_rep": 300000
+      }
+    ],
+    "stats": [
+      {
+        "stat": "hp",
+        "value": 3150
+      },
+      {
+        "stat": "reduce_mag_dmg",
+        "value": 0.05
+      },
+      {
+        "stat": "slaying_level",
+        "value": 30
+      },
+      {
+        "stat": "warding_level",
+        "value": 30
+      },
+      {
+        "stat": "mag_def",
+        "value": 726
+      },
+      {
+        "stat": "phys_def",
+        "value": 1588
+      },
+      {
+        "stat": "max_hp",
+        "value": 0.05
+      },
+      {
+        "stat": "speed",
+        "value": 0.30
+      },
+      {
+        "stat": "vitality",
+        "value": 63
+      }
+    ]
+  },
+  "arms": {
+    "name": "Chieftain's Bracers(PVE)",
+    "requirements": [
+      {
+        "req_class": "Barbarian",
+        "req_level": 101,
+        "req_str": 255,
+        "req_dex": 55,
+        "req_mag": 0,
+        "req_rep": 300000
+      }
+    ],
+    "stats": [
+      {
+        "stat": "hp",
+        "value": 3150
+      },
+      {
+        "stat": "int",
+        "value": -0.05
+      },
+      {
+        "stat": "slaying_level",
+        "value": 30
+      },
+      {
+        "stat": "warding_level",
+        "value": 30
+      },
+      {
+        "stat": "mag_def",
+        "value": 570
+      },
+      {
+        "stat": "phys_def",
+        "value": 1213
+      },
+      {
+        "stat": "max_hp",
+        "value": 0.05
+      },
+      {
+        "stat": "strength",
+        "value": 15
+      },
+      {
+        "stat": "vitality",
+        "value": 48
+      }
+    ]
+  },
+  "robe": {
+    "name": "Wings of Ascension",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 60,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "evasion",
+        "value": 600
+      },
+      {
+        "stat": "hp",
+        "value": 1687
+      },
+      {
+        "stat": "speed",
+        "value": 0.20
+      },
+      {
+        "stat": "reduce_phys_dmg",
+        "value": 0.04
+      },
+      {
+        "stat": "mag_def",
+        "value": 400
+      },
+      {
+        "stat": "phys_def",
+        "value": 500
+      },
+      {
+        "stat": "def_level",
+        "value": 2
+      },
+      {
+        "stat": "vitality",
+        "value": 74
+      }
+    ]
+  },
+  "belt": {
+    "name": "Chieftain's Pendant(PVE)",
+    "requirements": [
+      {
+        "req_class": "Barbarian",
+        "req_level": 101,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 300000
+      }
+    ],
+    "stats": [
+      {
+        "stat": "soulforce",
+        "value": 3030
+      },
+      {
+        "stat": "slaying_level",
+        "value": 10
+      },
+      {
+        "stat": "warding_level",
+        "value": 10
+      },
+      {
+        "stat": "mag_def",
+        "value": 1935
+      },
+      {
+        "stat": "phys_def",
+        "value": 1935
+      },
+      {
+        "stat": "strength",
+        "value": 10
+      },
+      {
+        "stat": "vitality",
+        "value": 90
+      }
+    ]
+  },
+  "necklace": {
+    "name": "Badge of the Cube: Defiance",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 80,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "max_hp",
+        "value": 0.05
+      },
+      {
+        "stat": "mag_def",
+        "value": 2075
+      },
+      {
+        "stat": "atk_level",
+        "value": 5
+      },
+      {
+        "stat": "def_level",
+        "value": 8
+      },
+      {
+        "stat": "dexterity",
+        "value": 10
+      },
+      {
+        "stat": "crit_rate",
+        "value": 3
+      },
+      {
+        "stat": "vitality",
+        "value": 81
+      }
+    ]
+  },
+  "ring_1": {
+    "name": "Star's Destiny",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 100,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "phys_atk",
+        "value": 156
+      },
+      {
+        "stat": "phys_def",
+        "value": 1687
+      },
+      {
+        "stat": "acc_perc",
+        "value": 0.05
+      },
+      {
+        "stat": "crit_rate",
+        "value": 3
+      },
+      {
+        "stat": "atk_level",
+        "value": 5
+      },
+      {
+        "stat": "def_level",
+        "value": 3
+      },
+      {
+        "stat": "vitality",
+        "value": 20
+      }
+    ]
+  },
+  "ring_2": {
+    "name": "Star's Destiny",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 100,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "phys_atk",
+        "value": 156
+      },
+      {
+        "stat": "phys_def",
+        "value": 1687
+      },
+      {
+        "stat": "acc_perc",
+        "value": 0.05
+      },
+      {
+        "stat": "crit_rate",
+        "value": 3
+      },
+      {
+        "stat": "atk_level",
+        "value": 5
+      },
+      {
+        "stat": "def_level",
+        "value": 3
+      },
+      {
+        "stat": "vitality",
+        "value": 20
+      }
+    ]
+  },
+  "blessing": {
+    "name": "O'Malley's Blessing",
+    "requirements": [
+      {
+        "req_class": "",
+        "req_level": 0,
+        "req_str": 0,
+        "req_dex": 0,
+        "req_mag": 0,
+        "req_rep": 0
+      }
+    ],
+    "stats": [
+      {
+        "stat": "atk_level",
+        "value": 15
+      },
+      {
+        "stat": "def_level",
+        "value": 15
+      }
+    ]
+  },
+  "constellation": {
+    "phys_def_1": 175,
+    "phys_def_2": 62,
+    "phys_def_3": 225,
+    "phys_def_4": 15,
+    "phys_def_5": 46,
+    "phys_def_6": 42,
+    "phys_def_7": 24,
+    "mag_def_1": 0,
+    "mag_def_2": 0,
+    "mag_def_3": 0,
+    "mag_def_4": 0,
+    "mag_def_5": 0,
+    "mag_def_6": 0,
+    "mag_def_7": 0,
+    "hp_1": 467,
+    "hp_2": 207,
+    "hp_3": 191,
+    "hp_4": 198,
+    "hp_5": 218,
+    "hp_6": 199,
+    "hp_7": 203,
+    "atk_level_1": 0,
+    "atk_level_2": 0,
+    "atk_level_3": 0,
+    "atk_level_4": 0,
+    "atk_level_5": 0,
+    "atk_level_6": 0,
+    "atk_level_7": 0,
+    "def_level_1": 0,
+    "def_level_2": 0,
+    "def_level_3": 0,
+    "def_level_4": 0,
+    "def_level_5": 0,
+    "def_level_6": 0,
+    "def_level_7": 0
+},
+  "title_stats": {
+    "accuracy": 6,
+    "evasion": 0,
+    "mag_atk": 12,
+    "mag_def": 0,
+    "phys_atk": 0,
+    "phys_def": 0
+},
+  "glyph_1": {
+    "level": 5,
+    "hp": 237,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 260,
+    "phys_atk": 29,
+    "phys_def": 344,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "glyph_2": {
+    "level": 5,
+    "hp": 237,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 260,
+    "phys_atk": 29,
+    "phys_def": 344,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "glyph_3": {
+    "level": 5,
+    "hp": 237,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 260,
+    "phys_atk": 29,
+    "phys_def": 344,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "glyph_4": {
+    "level": 5,
+    "hp": 237,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 260,
+    "phys_atk": 29,
+    "phys_def": 344,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "glyph_5": {
+    "level": 6,
+    "hp": 264,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 326,
+    "phys_atk": 55,
+    "phys_def": 432,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "glyph_6": {
+    "level": 6,
+    "hp": 264,
+    "spirit": 0,
+    "mag_atk": 0,
+    "mag_def": 326,
+    "phys_atk": 55,
+    "phys_def": 432,
+    "atk_level": 0,
+    "def_level": 0
+},
+  "reputation": 300000,
+  "active_buffs": []
+}

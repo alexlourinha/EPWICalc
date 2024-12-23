@@ -4,7 +4,7 @@ class Character:
                  constellation, title_stats, glyph_1, glyph_2, glyph_3, glyph_4, glyph_5, glyph_6, hp, mana,
                  phys_atk, mag_atk, phys_def, mag_def, atk_rate, speed, accuracy, evasion, crit_rate, crit_damage,
                  atk_level, def_level, spirit, soulforce, stealth_level, detection_level, slaying_level, warding_level,
-                 phys_penetration, mag_penetration, casting_time, active_buffs):
+                 phys_penetration, mag_penetration, casting_time, reputation, active_buffs):
         self.char_class = char_class
         self.level = level
         self.past_life_1 = past_life_1
@@ -63,4 +63,5 @@ class Character:
         self.phys_penetration = phys_penetration
         self.mag_penetration = mag_penetration
         self.casting_time = casting_time
+        self.reputation = reputation
         self.active_buffs = active_buffs

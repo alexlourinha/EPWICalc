@@ -1,4 +1,5 @@
 class Item:
-	def __init__(self, stat, value):
-		self.stat = stat
-		self.value = value
+	def __init__(self, name, requirements, stats):
+		self.name = name
+		self.requirements = requirements
+		self.stat = stats
