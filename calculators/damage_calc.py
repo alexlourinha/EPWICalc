@@ -1,7 +1,7 @@
 import sqlite3
-from weapon import *
+from classes.weapon import *
 
-database = 'calc_db'
+database = '../data/calc_db'
 
 try:
 	with sqlite3.connect(database) as conn:	

@@ -1,6 +1,6 @@
 import sqlite3
 
-database = "calc_db"
+database = "../data/calc_db"
 
 
 def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
@@ -13,7 +13,7 @@ def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase
 			hp_per_vit = class_data[7]
 			hp_per_level = class_data[8]
 			
-			unbuffed_hp = base_hp + equip_hp + (level*hp_per_level) + (vit*hp_per_vit)
+			unbuffed_hp = base_hp + equip_hp + ((level-1)*hp_per_level) + ((vit-5)*hp_per_vit)
 			buffed_hp = round(unbuffed_hp * (1+ buff_total + equip_perc_increase))
 			print(buffed_hp)
 			return buffed_hp
@@ -22,4 +22,4 @@ def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase
 		print(e)
 		
 		
-current_hp(105, "Barbarian", 1050, 0.35, 0, 0.05)
+current_hp(105, "Barbarian", 671, 1.15, 3200+16987, 0.15)

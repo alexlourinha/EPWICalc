@@ -1,0 +1,11 @@
+{
+    "name": "Placeholder for weapon name",
+    "type": "Placeholder for weapon type",
+    "mag_atk_min": 0,
+    "mag_atk_max": 0,
+    "phys_atk_min": 0,
+    "phys_atk_max": 0,
+    "attributes": [
+        {}
+    ]
+}

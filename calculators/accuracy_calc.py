@@ -1,6 +1,6 @@
 import sqlite3
 
-database = "calc_db"
+database = "../data/calc_dbb"
 
 
 def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
