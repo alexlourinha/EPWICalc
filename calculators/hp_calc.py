@@ -15,7 +15,6 @@ def calculate_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increa
 			
 			unbuffed_hp = base_hp + equip_hp + ((level-1)*hp_per_level) + ((vit-5)*hp_per_vit)
 			buffed_hp = round(unbuffed_hp * (1+ buff_total + equip_perc_increase))
-			print(buffed_hp)
 			return buffed_hp
 
 	except sqlite3.OperationalError as e:

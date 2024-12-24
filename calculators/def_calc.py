@@ -20,10 +20,4 @@ def calculate_def_stats(character, vit, strength, mag, total_phys_def_buff, tota
 	phys_def_result = phys_def + gear__phys_def_calc + 1
 	mag_def_result = mag_def + gear_mag_def_calc
 
-	print(phys_def, phys_def_stats)
-
 	return {"phys_def": round(phys_def_result), "mag_def": round(mag_def_result)}
-
-
-#physical defense = Round{ ( Vit + Str - 2 ) / 4 } + Round{ Def * ( 1 + Round{ ( ( 2 * Vit ) + ( 3 * Str ) ) / 25 } / 100 ) } + 1
-#magic resistance = Round{ ( Vit + Mag - 2 ) / 4 } + Round{ Res * ( 1 + Round{ ( ( 2 * Vit ) + ( 3 * Mag ) ) / 25 } / 100 ) }

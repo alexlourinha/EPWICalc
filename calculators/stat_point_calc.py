@@ -106,7 +106,6 @@ def calculate_mana_equip_stat(character):
 
 
 def calculate_max_mana(character):
-
     max_mp_stats = [character.get("weapon").get("attributes").get("max_mp"),
                     character.get("head").get("stats").get("max_mp"),
                     character.get("chest").get("stats").get("max_mp"),
@@ -122,6 +121,7 @@ def calculate_max_mana(character):
     result = add_valid_stats(max_mp_stats)
 
     return result
+
 
 def calculate_hp_equip_stat(character):
     equip_hp_stats = [character.get("weapon").get("attributes").get("hp"),
@@ -177,6 +177,7 @@ def calculate_max_hp(character):
 
     return result
 
+
 def phys_atk_total_excl_weapon(character):
     phys_atk_stats = [character.get("head").get("stats").get("phys_atk"),
                       character.get("chest").get("stats").get("phys_atk"),
@@ -202,6 +203,7 @@ def phys_atk_total_excl_weapon(character):
 
     return result
 
+
 def mag_atk_total_excl_weapon(character):
     mag_atk_stats = [character.get("head").get("stats").get("mag_atk"),
                      character.get("chest").get("stats").get("mag_atk"),
@@ -226,6 +228,7 @@ def mag_atk_total_excl_weapon(character):
     result = add_valid_stats(mag_atk_stats)
 
     return result
+
 
 def calculate_phys_def(character):
     phys_def_stats = [character.get("weapon").get("attributes").get("phys_def"),
@@ -260,36 +263,76 @@ def calculate_phys_def(character):
 
     return result
 
+
 def calculate_mag_def(character):
     mag_def_stats = [character.get("weapon").get("attributes").get("mag_def"),
-                      character.get("head").get("stats").get("mag_def"),
-                      character.get("chest").get("stats").get("mag_def"),
-                      character.get("legs").get("stats").get("mag_def"),
-                      character.get("feet").get("stats").get("mag_def"),
-                      character.get("arms").get("stats").get("mag_def"),
-                      character.get("robe").get("stats").get("mag_def"),
-                      character.get("belt").get("stats").get("mag_def"),
-                      character.get("necklace").get("stats").get("mag_def"),
-                      character.get("ring_1").get("stats").get("mag_def"),
-                      character.get("ring_2").get("stats").get("mag_def"),
-                      character.get("constellation").get("mag_def_1"),
-                      character.get("constellation").get("mag_def_2"),
-                      character.get("constellation").get("mag_def_3"),
-                      character.get("constellation").get("mag_def_4"),
-                      character.get("constellation").get("mag_def_5"),
-                      character.get("constellation").get("mag_def_6"),
-                      character.get("constellation").get("mag_def_7"),
-                      character.get("glyph_1").get("mag_def"),
-                      character.get("glyph_2").get("mag_def"),
-                      character.get("glyph_3").get("mag_def"),
-                      character.get("glyph_4").get("mag_def"),
-                      character.get("glyph_5").get("mag_def"),
-                      character.get("glyph_6").get("mag_def"),
-                      character.get("meridian").get("mag_def"),
-                      character.get("title_stats").get("mag_def"),
-                      character.get("tome").get("stats").get("mag_def")]
+                     character.get("head").get("stats").get("mag_def"),
+                     character.get("chest").get("stats").get("mag_def"),
+                     character.get("legs").get("stats").get("mag_def"),
+                     character.get("feet").get("stats").get("mag_def"),
+                     character.get("arms").get("stats").get("mag_def"),
+                     character.get("robe").get("stats").get("mag_def"),
+                     character.get("belt").get("stats").get("mag_def"),
+                     character.get("necklace").get("stats").get("mag_def"),
+                     character.get("ring_1").get("stats").get("mag_def"),
+                     character.get("ring_2").get("stats").get("mag_def"),
+                     character.get("constellation").get("mag_def_1"),
+                     character.get("constellation").get("mag_def_2"),
+                     character.get("constellation").get("mag_def_3"),
+                     character.get("constellation").get("mag_def_4"),
+                     character.get("constellation").get("mag_def_5"),
+                     character.get("constellation").get("mag_def_6"),
+                     character.get("constellation").get("mag_def_7"),
+                     character.get("glyph_1").get("mag_def"),
+                     character.get("glyph_2").get("mag_def"),
+                     character.get("glyph_3").get("mag_def"),
+                     character.get("glyph_4").get("mag_def"),
+                     character.get("glyph_5").get("mag_def"),
+                     character.get("glyph_6").get("mag_def"),
+                     character.get("meridian").get("mag_def"),
+                     character.get("title_stats").get("mag_def"),
+                     character.get("tome").get("stats").get("mag_def")]
 
     result = add_valid_stats(mag_def_stats)
 
     return result
 
+
+def calculate_equip_speed(character):
+    constellation_speed_buff = 0
+
+    if all(character.get("constellation").get(f"hp_{i}") > 0 for i in range(1, 8)):
+        constellation_speed_buff = 0.20
+
+    speed_stats = [character.get("weapon").get("attributes").get("speed"),
+                   character.get("head").get("stats").get("speed"),
+                   character.get("chest").get("stats").get("speed"),
+                   character.get("legs").get("stats").get("speed"),
+                   character.get("feet").get("stats").get("speed"),
+                   character.get("arms").get("stats").get("speed"),
+                   character.get("robe").get("stats").get("speed"),
+                   character.get("belt").get("stats").get("speed"),
+                   character.get("necklace").get("stats").get("speed"),
+                   character.get("ring_1").get("stats").get("speed"),
+                   character.get("ring_2").get("stats").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("constellation").get("speed"),
+                   character.get("glyph_1").get("speed"),
+                   character.get("glyph_2").get("speed"),
+                   character.get("glyph_3").get("speed"),
+                   character.get("glyph_4").get("speed"),
+                   character.get("glyph_5").get("speed"),
+                   character.get("glyph_6").get("speed"),
+                   character.get("meridian").get("speed"),
+                   character.get("title_stats").get("speed"),
+                   character.get("tome").get("stats").get("speed"),
+                   constellation_speed_buff]
+
+    result = add_valid_stats(speed_stats)
+
+    return result

@@ -1,5 +1,6 @@
 from calculators.def_calc import calculate_def_stats
 from calculators.mana_calc import calculate_mana
+from calculators.speed_calc import calculate_speed
 from calculators.stat_point_calc import calculate_ability_points, calculate_vit, calculate_hp_equip_stat, \
     calculate_max_hp, \
     calculate_str, calculate_dex, calculate_mag, calculate_mana_equip_stat, calculate_max_mana
@@ -70,6 +71,8 @@ def calculate_character_stats(char):
 
     def_stats = calculate_def_stats(char, vitality, strength, magic, total_phys_def_buff, total_mag_def_buff)
 
+    speed = calculate_speed(char)
+
     character = Character(char_class=char.get("char_class"),
                           level=char.get("level"),
                           past_life_1=char.get("past_life_1"),
@@ -85,7 +88,7 @@ def calculate_character_stats(char):
                           phys_def=def_stats.get("phys_def"),
                           mag_def=def_stats.get("mag_def"),
                           atk_rate=0,
-                          speed=0,
+                          speed=speed,
                           accuracy=0,
                           evasion=0,
                           crit_rate=0,

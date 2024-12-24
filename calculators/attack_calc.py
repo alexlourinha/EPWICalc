@@ -8,19 +8,18 @@ from helper.valid_stats_processor import add_valid_stats
 
 database = 'data/calc_db'
 
-try:
-	with sqlite3.connect(database) as conn:	
-		cursor = conn.cursor()
-		cursor.execute('SELECT * FROM classes')
-		rows = cursor.fetchall()
-		for row in rows:
-			print(row)
-
-except sqlite3.OperationalError as e:
-	print(e)
+# try:
+# 	with sqlite3.connect(database) as conn:
+# 		cursor = conn.cursor()
+# 		cursor.execute('SELECT * FROM classes')
+# 		rows = cursor.fetchall()
+# 		for row in rows:
+# 			print(row)
+#
+# except sqlite3.OperationalError as e:
+# 	print(e)
 
 def calculate_base_damage(attack_multiplier, weapon_attack):
-	print(weapon_attack)
 	min_phys_atk = round(attack_multiplier[0] * weapon_attack["phys_atk"][0])
 	max_phys_atk = round(attack_multiplier[0] * weapon_attack["phys_atk"][1])
 	min_mag_atk = round(attack_multiplier[1] * weapon_attack["mag_atk"][0])
@@ -41,7 +40,7 @@ def calculate_attack_multiplier(weapon, dex, mag, strength, mastery, phys_attack
 	return [phys_multiplier, mag_multiplier]
 		
 def calculate_weapon_attack(weapon, phys_atk_equip, mag_atk_equip, level):
-	if weapon.get("type") is not "magic":
+	if weapon.get("type") != "magic":
 		min_phys_atk = weapon.get("phys_atk_min") + phys_atk_equip + level
 		max_phys_atk = weapon.get("phys_atk_max") + phys_atk_equip + level
 		min_mag_atk = weapon.get("mag_atk_min") + mag_atk_equip + 1
@@ -64,7 +63,6 @@ def calculate_attack(character):
 
 	phys_atk_total = phys_atk_total_excl_weapon(character)
 	mag_atk_total = mag_atk_total_excl_weapon(character)
-	print(mag_atk_total)
 
 	str_stat = calculate_str(character)
 	dex_stat = calculate_dex(character)
