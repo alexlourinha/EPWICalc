@@ -20,6 +20,3 @@ def calculate_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increa
 
 	except sqlite3.OperationalError as e:
 		print(e)
-		
-		
-calculate_hp(105, "Barbarian", 671, 1.15, 3200+16987, 0.15)

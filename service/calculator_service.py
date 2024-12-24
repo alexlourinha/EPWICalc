@@ -1,80 +1,25 @@
+from calculators.def_calc import calculate_def_stats
+from calculators.mana_calc import calculate_mana
+from calculators.stat_point_calc import calculate_ability_points, calculate_vit, calculate_hp_equip_stat, \
+    calculate_max_hp, \
+    calculate_str, calculate_dex, calculate_mag, calculate_mana_equip_stat, calculate_max_mana
+from calculators.attack_calc import calculate_attack
 from calculators.hp_calc import calculate_hp
-
-def add_valid_stats(stats):
-    result = 0
-    for stat in stats :
-        if stat is not None:
-            result = result + stat
-    return result
+from classes.character import Character
 
 
-
-def calculate_character_hp(char):
+def calculate_character_hp_and_mana(char):
 
     total_hp_buff = 0
-    constellation_hp_buff = 0
+    total_mana_buff = 0
 
-    if all(char.get("constellation").get(f"phys_def_{i}") > 0 for i in range(1, 8)):
-        constellation_hp_buff = 0.05
+    total_vit = calculate_vit(char)
+    total_mag = calculate_mag(char)
 
-    equip_hp_stats = [char.get("weapon").get("attributes").get("hp"),
-                char.get("head").get("stats").get("hp"),
-                char.get("chest").get("stats").get("hp"),
-                char.get("legs").get("stats").get("hp"),
-                char.get("feet").get("stats").get("hp"),
-                char.get("arms").get("stats").get("hp"),
-                char.get("robe").get("stats").get("hp"),
-                char.get("belt").get("stats").get("hp"),
-                char.get("necklace").get("stats").get("hp"),
-                char.get("ring_1").get("stats").get("hp"),
-                char.get("ring_2").get("stats").get("hp"),
-                char.get("constellation").get("hp_1"),
-                char.get("constellation").get("hp_2"),
-                char.get("constellation").get("hp_3"),
-                char.get("constellation").get("hp_4"),
-                char.get("constellation").get("hp_5"),
-                char.get("constellation").get("hp_6"),
-                char.get("constellation").get("hp_7"),
-                char.get("glyph_1").get("hp"),
-                char.get("glyph_2").get("hp"),
-                char.get("glyph_3").get("hp"),
-                char.get("glyph_4").get("hp"),
-                char.get("glyph_5").get("hp"),
-                char.get("glyph_6").get("hp"),
-                char.get("meridian").get("hp"),
-                char.get("tome").get("stats").get("hp")]
-    max_hp_stats = [char.get("weapon").get("attributes").get("max_hp"),
-              char.get("head").get("stats").get("max_hp"),
-              char.get("chest").get("stats").get("max_hp"),
-              char.get("legs").get("stats").get("max_hp"),
-              char.get("feet").get("stats").get("max_hp"),
-              char.get("arms").get("stats").get("max_hp"),
-              char.get("robe").get("stats").get("max_hp"),
-              char.get("belt").get("stats").get("max_hp"),
-              char.get("necklace").get("stats").get("max_hp"),
-              char.get("ring_1").get("stats").get("max_hp"),
-              char.get("ring_2").get("stats").get("max_hp"),
-              constellation_hp_buff]
-    vit_stats = [char.get("vitality"),
-                 char.get("weapon").get("attributes").get("vitality"),
-                 char.get("head").get("stats").get("vitality"),
-                 char.get("chest").get("stats").get("vitality"),
-                 char.get("legs").get("stats").get("vitality"),
-                 char.get("feet").get("stats").get("vitality"),
-                 char.get("arms").get("stats").get("vitality"),
-                 char.get("robe").get("stats").get("vitality"),
-                 char.get("belt").get("stats").get("vitality"),
-                 char.get("necklace").get("stats").get("vitality"),
-                 char.get("ring_1").get("stats").get("vitality"),
-                 char.get("ring_2").get("stats").get("vitality"),
-                 char.get("tome").get("stats").get("vitality")]
-
-
-    total_vit = add_valid_stats(vit_stats)
-
-    equip_hp = add_valid_stats(equip_hp_stats)
-
-    max_hp = add_valid_stats(max_hp_stats)
+    equip_hp = calculate_hp_equip_stat(char)
+    max_hp = calculate_max_hp(char)
+    equip_mana = calculate_mana_equip_stat(char)
+    max_mana = calculate_max_mana(char)
 
     if any("Beast King's Inspiration - Sage" in x for x in char.get("active_buffs")):
         total_hp_buff = total_hp_buff + 0.40
@@ -82,13 +27,8 @@ def calculate_character_hp(char):
         total_hp_buff = total_hp_buff + 0.15
     if any("Tiger Form - Sage" in x for x in char.get("active_buffs")):
         total_hp_buff = total_hp_buff + 0.40
-
-    print(round(total_hp_buff, 2))
-    print(equip_hp)
-    print(round(max_hp, 2))
-    print(total_vit)
-    print(char.get("level"))
-    print(char.get("char_class"))
+    if any("Copper Paperweight" in x for x in char.get("active_buffs")):
+        total_hp_buff = total_hp_buff + 0.10
 
     hp = calculate_hp(level=char.get("level"),
                  char_class=char.get("char_class"),
@@ -97,10 +37,69 @@ def calculate_character_hp(char):
                  equip_hp=equip_hp,
                  equip_perc_increase=round(max_hp, 2))
 
-    print(hp)
+    mp = calculate_mana(level=char.get("level"),
+                 char_class=char.get("char_class"),
+                 mag=total_mag,
+                 buff_total=round(total_mana_buff, 2),
+                 equip_mana=equip_mana,
+                 equip_perc_increase=round(max_mana, 2))
 
-    return hp
+    return [hp, total_vit, mp, total_mag]
 
 def calculate_character_stats(char):
-    hp = calculate_character_hp(char)
-    return hp
+
+    hp = calculate_character_hp_and_mana(char)[0]
+    mp = calculate_character_hp_and_mana(char)[2]
+    vitality = calculate_character_hp_and_mana(char)[1]
+    magic = calculate_character_hp_and_mana(char)[3]
+    ability_points = calculate_ability_points(char.get("level"),
+                                              char.get("past_life_1"),
+                                              char.get("past_life_2"))
+    atk = calculate_attack(char)
+    strength = calculate_str(char)
+    dexterity = calculate_dex(char)
+    magic = calculate_mag(char)
+
+    total_phys_def_buff = 0
+    total_mag_def_buff = 0
+
+    if any("Passive Defense 8" in x for x in char.get("active_buffs")):
+        total_phys_def_buff = total_phys_def_buff + 0.64
+    if any("Passive Defense 8" in x for x in char.get("active_buffs")):
+        total_mag_def_buff = total_mag_def_buff + 0.64
+
+    def_stats = calculate_def_stats(char, vitality, strength, magic, total_phys_def_buff, total_mag_def_buff)
+
+    character = Character(char_class=char.get("char_class"),
+                          level=char.get("level"),
+                          past_life_1=char.get("past_life_1"),
+                          past_life_2=char.get("past_life_2"),
+                          ability_points= ability_points,
+                          vitality=vitality,
+                          strength=strength,
+                          dexterity=dexterity,
+                          magic=magic,
+                          hp=hp,
+                          mana=mp,
+                          atk=atk,
+                          phys_def=def_stats.get("phys_def"),
+                          mag_def=def_stats.get("mag_def"),
+                          atk_rate=0,
+                          speed=0,
+                          accuracy=0,
+                          evasion=0,
+                          crit_rate=0,
+                          atk_level=0,
+                          def_level=0,
+                          spirit=0,
+                          soulforce=0,
+                          stealth_level=0,
+                          detection_level=0,
+                          slaying_level=0,
+                          warding_level=0,
+                          phys_penetration=0,
+                          mag_penetration=0,
+                          casting_time=0,
+                          reputation=char.get("reputation")
+                          )
+    return character
