@@ -1,3 +1,4 @@
+from calculators.attack_rate_calc import calc_atk_rate
 from calculators.def_calc import calculate_def_stats
 from calculators.mana_calc import calculate_mana
 from calculators.speed_calc import calculate_speed
@@ -70,8 +71,8 @@ def calculate_character_stats(char):
         total_mag_def_buff = total_mag_def_buff + 0.64
 
     def_stats = calculate_def_stats(char, vitality, strength, magic, total_phys_def_buff, total_mag_def_buff)
-
     speed = calculate_speed(char)
+    attack_rate = calc_atk_rate(char)
 
     character = Character(char_class=char.get("char_class"),
                           level=char.get("level"),
@@ -87,7 +88,7 @@ def calculate_character_stats(char):
                           atk=atk,
                           phys_def=def_stats.get("phys_def"),
                           mag_def=def_stats.get("mag_def"),
-                          atk_rate=0,
+                          atk_rate=attack_rate,
                           speed=speed,
                           accuracy=0,
                           evasion=0,

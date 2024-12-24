@@ -20,6 +20,7 @@ def calculate_str(character):
                       character.get("necklace").get("stats").get("strength"),
                       character.get("ring_1").get("stats").get("strength"),
                       character.get("ring_2").get("stats").get("strength"),
+                      character.get("set_bonus").get("strength"),
                       character.get("tome").get("stats").get("strength")]
 
     base_strength = character.get("strength")
@@ -40,6 +41,7 @@ def calculate_dex(character):
                        character.get("necklace").get("stats").get("dexterity"),
                        character.get("ring_1").get("stats").get("dexterity"),
                        character.get("ring_2").get("stats").get("dexterity"),
+                       character.get("set_bonus").get("dexterity"),
                        character.get("tome").get("stats").get("dexterity")]
 
     base_dexterity = character.get("dexterity")
@@ -60,6 +62,7 @@ def calculate_mag(character):
                    character.get("necklace").get("stats").get("magic"),
                    character.get("ring_1").get("stats").get("magic"),
                    character.get("ring_2").get("stats").get("magic"),
+                   character.get("set_bonus").get("magic"),
                    character.get("tome").get("stats").get("magic")]
 
     base_magic = character.get("magic")
@@ -80,6 +83,7 @@ def calculate_vit(character):
                       character.get("necklace").get("stats").get("vitality"),
                       character.get("ring_1").get("stats").get("vitality"),
                       character.get("ring_2").get("stats").get("vitality"),
+                      character.get("set_bonus").get("vitality"),
                       character.get("tome").get("stats").get("vitality")]
 
     base_vitality = character.get("vitality")
@@ -100,6 +104,7 @@ def calculate_mana_equip_stat(character):
                       character.get("necklace").get("stats").get("mp"),
                       character.get("ring_1").get("stats").get("mp"),
                       character.get("ring_2").get("stats").get("mp"),
+                      character.get("set_bonus").get("mp"),
                       character.get("tome").get("stats").get("mp")]
     result = add_valid_stats(equip_mp_stats)
     return result
@@ -114,6 +119,7 @@ def calculate_max_mana(character):
                     character.get("arms").get("stats").get("max_mp"),
                     character.get("robe").get("stats").get("max_mp"),
                     character.get("belt").get("stats").get("max_mp"),
+                    character.get("set_bonus").get("max_mp"),
                     character.get("necklace").get("stats").get("max_mp"),
                     character.get("ring_1").get("stats").get("max_mp"),
                     character.get("ring_2").get("stats").get("max_mp")]
@@ -135,6 +141,7 @@ def calculate_hp_equip_stat(character):
                       character.get("necklace").get("stats").get("hp"),
                       character.get("ring_1").get("stats").get("hp"),
                       character.get("ring_2").get("stats").get("hp"),
+                      character.get("set_bonus").get("hp"),
                       character.get("constellation").get("hp_1"),
                       character.get("constellation").get("hp_2"),
                       character.get("constellation").get("hp_3"),
@@ -171,6 +178,7 @@ def calculate_max_hp(character):
                     character.get("necklace").get("stats").get("max_hp"),
                     character.get("ring_1").get("stats").get("max_hp"),
                     character.get("ring_2").get("stats").get("max_hp"),
+                    character.get("set_bonus").get("max_hp"),
                     constellation_hp_buff]
 
     result = add_valid_stats(max_hp_stats)
@@ -189,6 +197,7 @@ def phys_atk_total_excl_weapon(character):
                       character.get("necklace").get("stats").get("phys_atk"),
                       character.get("ring_1").get("stats").get("phys_atk"),
                       character.get("ring_2").get("stats").get("phys_atk"),
+                      character.get("set_bonus").get("phys_atk"),
                       character.get("glyph_1").get("phys_atk"),
                       character.get("glyph_2").get("phys_atk"),
                       character.get("glyph_3").get("phys_atk"),
@@ -215,6 +224,7 @@ def mag_atk_total_excl_weapon(character):
                      character.get("necklace").get("stats").get("mag_atk"),
                      character.get("ring_1").get("stats").get("mag_atk"),
                      character.get("ring_2").get("stats").get("mag_atk"),
+                     character.get("set_bonus").get("mag_atk"),
                      character.get("glyph_1").get("mag_atk"),
                      character.get("glyph_2").get("mag_atk"),
                      character.get("glyph_3").get("mag_atk"),
@@ -242,6 +252,7 @@ def calculate_phys_def(character):
                       character.get("necklace").get("stats").get("phys_def"),
                       character.get("ring_1").get("stats").get("phys_def"),
                       character.get("ring_2").get("stats").get("phys_def"),
+                      character.get("set_bonus").get("phys_def"),
                       character.get("constellation").get("phys_def_1"),
                       character.get("constellation").get("phys_def_2"),
                       character.get("constellation").get("phys_def_3"),
@@ -276,6 +287,7 @@ def calculate_mag_def(character):
                      character.get("necklace").get("stats").get("mag_def"),
                      character.get("ring_1").get("stats").get("mag_def"),
                      character.get("ring_2").get("stats").get("mag_def"),
+                     character.get("set_bonus").get("mag_def"),
                      character.get("constellation").get("mag_def_1"),
                      character.get("constellation").get("mag_def_2"),
                      character.get("constellation").get("mag_def_3"),
@@ -315,6 +327,7 @@ def calculate_equip_speed(character):
                    character.get("necklace").get("stats").get("speed"),
                    character.get("ring_1").get("stats").get("speed"),
                    character.get("ring_2").get("stats").get("speed"),
+                   character.get("set_bonus").get("speed"),
                    character.get("constellation").get("speed"),
                    character.get("constellation").get("speed"),
                    character.get("constellation").get("speed"),
@@ -336,3 +349,24 @@ def calculate_equip_speed(character):
     result = add_valid_stats(speed_stats)
 
     return result
+
+def calculate_interval(character):
+
+    int_stats = [character.get("weapon").get("attributes").get("int"),
+                   character.get("head").get("stats").get("int"),
+                   character.get("chest").get("stats").get("int"),
+                   character.get("legs").get("stats").get("int"),
+                   character.get("feet").get("stats").get("int"),
+                   character.get("arms").get("stats").get("int"),
+                   character.get("robe").get("stats").get("int"),
+                   character.get("belt").get("stats").get("int"),
+                   character.get("necklace").get("stats").get("int"),
+                   character.get("ring_1").get("stats").get("int"),
+                   character.get("ring_2").get("stats").get("int"),
+                   character.get("set_bonus").get("int"),
+                   character.get("blessing").get("stats").get("int"),
+                   character.get("tome").get("stats").get("int")]
+
+    result = add_valid_stats(int_stats)
+
+    return -result

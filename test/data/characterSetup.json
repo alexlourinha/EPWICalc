@@ -145,7 +145,7 @@
     ],
     "stats": {
       "hp": 3150,
-      "int": -0.05,
+      "int": -0.10,
       "slaying_level": 30,
       "warding_level": 30,
       "mag_def": 570,
@@ -415,6 +415,12 @@
     "phys_def": 432,
     "atk_level": 0,
     "def_level": 0
+  },
+  "set_bonus": {
+    "slaying_level": 10,
+    "crit_rate": 5,
+    "int": -0.05
+
   },
   "reputation": 300000,
   "active_buffs": [
