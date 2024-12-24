@@ -1,30 +1,29 @@
 import sqlite3
 
-database = "../data/calc_dbb"
+from calculators.stat_point_calc import calculate_dex, calculate_equip_acc_perc, calculate_equip_acc
+
+database = "data/calc_db"
 
 
-def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
+def calc_accuracy(character):
 	try:
 		with sqlite3.connect(database) as conn:	
 			cursor = conn.cursor()
-			cursor.execute('SELECT * FROM classes WHERE name = ?', (char_class,))
+			cursor.execute('SELECT * FROM classes WHERE name = ?', (character.get("char_class"),))
 			class_data = cursor.fetchone()
-			base_hp = class_data[3]
-			hp_per_vit = class_data[7]
-			hp_per_level = class_data[8]
-			
-			unbuffed_hp = base_hp + equip_hp + ((level-1)*hp_per_level) + ((vit-5)*hp_per_vit)
-			buffed_hp = round(unbuffed_hp * (1+ buff_total + equip_perc_increase))
-			return buffed_hp
+			base_acc = class_data[5]
+			acc_per_dex = class_data[11]
+			buff_total = 0
+			equip_increase = calculate_equip_acc(character)
+			equip_perc_increase = calculate_equip_acc_perc(character)
+
+			dex = calculate_dex(character)
+
+			unbuffed_acc = base_acc + ((dex -5) * acc_per_dex) + equip_increase
+			modifier = 1 +  buff_total + equip_perc_increase
+			buffed_acc = round(unbuffed_acc * modifier)
+
+			return buffed_acc
 
 	except sqlite3.OperationalError as e:
 		print(e)
-		
-		
-current_hp(105, "Barbarian", 1115, 1.15, (19253+1584), 0.15)
-
-#buff 70 (40 beast king) 15 equip 15 passive 10 105 pill
-#hp 19253 (18980 + 273)
-#52764 expected unbuffed
-#glyps 1556
-#need all passives plus 4 lvl 7 and 2 lvl 8 glyphs for 100k hp or (1584 1736) 152 hp base from somewhere (merid 47)

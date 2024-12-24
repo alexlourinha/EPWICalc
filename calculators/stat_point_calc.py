@@ -350,23 +350,129 @@ def calculate_equip_speed(character):
 
     return result
 
-def calculate_interval(character):
 
+def calculate_interval(character):
     int_stats = [character.get("weapon").get("attributes").get("int"),
-                   character.get("head").get("stats").get("int"),
-                   character.get("chest").get("stats").get("int"),
-                   character.get("legs").get("stats").get("int"),
-                   character.get("feet").get("stats").get("int"),
-                   character.get("arms").get("stats").get("int"),
-                   character.get("robe").get("stats").get("int"),
-                   character.get("belt").get("stats").get("int"),
-                   character.get("necklace").get("stats").get("int"),
-                   character.get("ring_1").get("stats").get("int"),
-                   character.get("ring_2").get("stats").get("int"),
-                   character.get("set_bonus").get("int"),
-                   character.get("blessing").get("stats").get("int"),
-                   character.get("tome").get("stats").get("int")]
+                 character.get("head").get("stats").get("int"),
+                 character.get("chest").get("stats").get("int"),
+                 character.get("legs").get("stats").get("int"),
+                 character.get("feet").get("stats").get("int"),
+                 character.get("arms").get("stats").get("int"),
+                 character.get("robe").get("stats").get("int"),
+                 character.get("belt").get("stats").get("int"),
+                 character.get("necklace").get("stats").get("int"),
+                 character.get("ring_1").get("stats").get("int"),
+                 character.get("ring_2").get("stats").get("int"),
+                 character.get("set_bonus").get("int"),
+                 character.get("blessing").get("stats").get("int"),
+                 character.get("tome").get("stats").get("int")]
 
     result = add_valid_stats(int_stats)
 
     return -result
+
+
+def calculate_equip_crit(character):
+    crit_stats = [character.get("weapon").get("attributes").get("crit_rate"),
+                     character.get("head").get("stats").get("crit_rate"),
+                     character.get("chest").get("stats").get("crit_rate"),
+                     character.get("legs").get("stats").get("crit_rate"),
+                     character.get("feet").get("stats").get("crit_rate"),
+                     character.get("arms").get("stats").get("crit_rate"),
+                     character.get("robe").get("stats").get("crit_rate"),
+                     character.get("belt").get("stats").get("crit_rate"),
+                     character.get("necklace").get("stats").get("crit_rate"),
+                     character.get("ring_1").get("stats").get("crit_rate"),
+                     character.get("ring_2").get("stats").get("crit_rate"),
+                     character.get("set_bonus").get("crit_rate"),
+                     character.get("tome").get("stats").get("crit_rate")]
+
+    result = add_valid_stats(crit_stats)
+
+    return result
+
+def calculate_equip_acc(character):
+    acc_stats = [character.get("weapon").get("attributes").get("accuracy"),
+                     character.get("head").get("stats").get("accuracy"),
+                     character.get("chest").get("stats").get("accuracy"),
+                     character.get("legs").get("stats").get("accuracy"),
+                     character.get("feet").get("stats").get("accuracy"),
+                     character.get("arms").get("stats").get("accuracy"),
+                     character.get("robe").get("stats").get("accuracy"),
+                     character.get("belt").get("stats").get("accuracy"),
+                     character.get("necklace").get("stats").get("accuracy"),
+                     character.get("ring_1").get("stats").get("accuracy"),
+                     character.get("ring_2").get("stats").get("accuracy"),
+                     character.get("set_bonus").get("accuracy"),
+                     character.get("meridian").get("accuracy"),
+                     character.get("title_stats").get("accuracy"),
+                     character.get("tome").get("stats").get("accuracy")]
+
+    result = add_valid_stats(acc_stats)
+
+    return result
+
+def calculate_equip_acc_perc(character):
+    acc_stats = [character.get("weapon").get("attributes").get("acc_perc"),
+                     character.get("head").get("stats").get("acc_perc"),
+                     character.get("chest").get("stats").get("acc_perc"),
+                     character.get("legs").get("stats").get("acc_perc"),
+                     character.get("feet").get("stats").get("acc_perc"),
+                     character.get("arms").get("stats").get("acc_perc"),
+                     character.get("robe").get("stats").get("acc_perc"),
+                     character.get("belt").get("stats").get("acc_perc"),
+                     character.get("necklace").get("stats").get("acc_perc"),
+                     character.get("ring_1").get("stats").get("acc_perc"),
+                     character.get("ring_2").get("stats").get("acc_perc"),
+                     character.get("set_bonus").get("acc_perc"),
+                     character.get("meridian").get("acc_perc"),
+                     character.get("title_stats").get("acc_perc"),
+                     character.get("tome").get("stats").get("acc_perc")]
+
+    result = add_valid_stats(acc_stats)
+
+    return result
+
+def calculate_equip_evasion(character):
+    evasion_stats = [character.get("weapon").get("attributes").get("evasion"),
+                     character.get("head").get("stats").get("evasion"),
+                     character.get("chest").get("stats").get("evasion"),
+                     character.get("legs").get("stats").get("evasion"),
+                     character.get("feet").get("stats").get("evasion"),
+                     character.get("arms").get("stats").get("evasion"),
+                     character.get("robe").get("stats").get("evasion"),
+                     character.get("belt").get("stats").get("evasion"),
+                     character.get("necklace").get("stats").get("evasion"),
+                     character.get("ring_1").get("stats").get("evasion"),
+                     character.get("ring_2").get("stats").get("evasion"),
+                     character.get("set_bonus").get("evasion"),
+                     character.get("meridian").get("evasion"),
+                     character.get("title_stats").get("evasion"),
+                     character.get("tome").get("stats").get("evasion")]
+
+    result = add_valid_stats(evasion_stats)
+
+    return result
+
+def calculate_equip_evasion_perc(character):
+    evasion_stats = [character.get("weapon").get("attributes").get("evasion_perc"),
+                     character.get("head").get("stats").get("evasion_perc"),
+                     character.get("chest").get("stats").get("evasion_perc"),
+                     character.get("legs").get("stats").get("evasion_perc"),
+                     character.get("feet").get("stats").get("evasion_perc"),
+                     character.get("arms").get("stats").get("evasion_perc"),
+                     character.get("robe").get("stats").get("evasion_perc"),
+                     character.get("belt").get("stats").get("evasion_perc"),
+                     character.get("necklace").get("stats").get("evasion_perc"),
+                     character.get("ring_1").get("stats").get("evasion_perc"),
+                     character.get("ring_2").get("stats").get("evasion_perc"),
+                     character.get("set_bonus").get("evasion_perc"),
+                     character.get("meridian").get("evasion_perc"),
+                     character.get("title_stats").get("evasion_perc"),
+                     character.get("tome").get("stats").get("evasion_perc")]
+
+    result = add_valid_stats(evasion_stats)
+
+    return result
+
+

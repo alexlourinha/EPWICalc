@@ -236,7 +236,7 @@
     "stats": {
       "phys_atk": 156,
       "phys_def": 1687,
-      "acc_perc": 0.05,
+      "acc_perc": 0.50,
       "crit_rate": 3,
       "atk_level": 5,
       "def_level": 3,
@@ -258,7 +258,7 @@
     "stats": {
       "phys_atk": 156,
       "phys_def": 1687,
-      "acc_perc": 0.05,
+      "acc_perc": 0.50,
       "crit_rate": 3,
       "atk_level": 5,
       "def_level": 3,

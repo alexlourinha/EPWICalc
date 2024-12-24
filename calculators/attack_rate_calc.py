@@ -14,7 +14,5 @@ def calc_atk_rate(character) :
         interval = weapon_int - equip_int
         atk_rate = 1/interval
 
-        print(weapon_int, interval, equip_int, atk_rate)
-
 
     return round(atk_rate, 2)

@@ -1,5 +1,8 @@
+from calculators.accuracy_calc import calc_accuracy
 from calculators.attack_rate_calc import calc_atk_rate
+from calculators.crit_calc import crit_calc
 from calculators.def_calc import calculate_def_stats
+from calculators.evasion_calc import calc_evasion
 from calculators.mana_calc import calculate_mana
 from calculators.speed_calc import calculate_speed
 from calculators.stat_point_calc import calculate_ability_points, calculate_vit, calculate_hp_equip_stat, \
@@ -73,6 +76,9 @@ def calculate_character_stats(char):
     def_stats = calculate_def_stats(char, vitality, strength, magic, total_phys_def_buff, total_mag_def_buff)
     speed = calculate_speed(char)
     attack_rate = calc_atk_rate(char)
+    crit_rate = crit_calc(char)
+    accuracy = calc_accuracy(char)
+    evasion = calc_evasion(char)
 
     character = Character(char_class=char.get("char_class"),
                           level=char.get("level"),
@@ -90,9 +96,9 @@ def calculate_character_stats(char):
                           mag_def=def_stats.get("mag_def"),
                           atk_rate=attack_rate,
                           speed=speed,
-                          accuracy=0,
-                          evasion=0,
-                          crit_rate=0,
+                          accuracy=accuracy,
+                          evasion=evasion,
+                          crit_rate=crit_rate,
                           atk_level=0,
                           def_level=0,
                           spirit=0,

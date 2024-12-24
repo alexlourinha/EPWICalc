@@ -1,24 +1,29 @@
 import sqlite3
 
-database = "../data/calc_db"
+from calculators.stat_point_calc import calculate_dex, calculate_equip_evasion, calculate_equip_evasion_perc
+
+database = "data/calc_db"
 
 
-def current_hp(level, char_class, vit, buff_total, equip_hp, equip_perc_increase):
+def calc_evasion(character):
 	try:
-		with sqlite3.connect(database) as conn:	
+		with sqlite3.connect(database) as conn:
 			cursor = conn.cursor()
-			cursor.execute('SELECT * FROM classes WHERE name = ?', (char_class,))
+			cursor.execute('SELECT * FROM classes WHERE name = ?', (character.get("char_class"),))
 			class_data = cursor.fetchone()
-			base_hp = class_data[3]
-			hp_per_vit = class_data[7]
-			hp_per_level = class_data[8]
-			
-			unbuffed_hp = base_hp + equip_hp + (level*hp_per_level) + (vit*hp_per_vit)
-			buffed_hp = round(unbuffed_hp * (1+ buff_total + equip_perc_increase))
-			return buffed_hp
+			base_evasion = class_data[6]
+			evasion_per_dex = class_data[12]
+			buff_total = 0
+			equip_increase = calculate_equip_evasion(character)
+			equip_perc_increase = calculate_equip_evasion_perc(character)
+
+			dex = calculate_dex(character)
+
+			unbuffed_evasion = base_evasion + ((dex -5) * evasion_per_dex) + equip_increase
+			modifier = 1 +  buff_total + equip_perc_increase
+			buffed_evasion = round(unbuffed_evasion * modifier)
+
+			return buffed_evasion
 
 	except sqlite3.OperationalError as e:
 		print(e)
-		
-		
-current_hp(105, "Barbarian", 1050, 0.35, 0, 0.05)

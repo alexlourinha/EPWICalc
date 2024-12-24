@@ -19,8 +19,6 @@ def calculate_speed(character):
             if any("Tiger Form - Sage" in x for x in character.get("active_buffs")):
                 buff_speed = buff_speed + 0.9
 
-            print(base_speed, equip_speed, buff_speed)
-
             buffed_base_speed = base_speed * buff_speed
             total_speed = round(buffed_base_speed + equip_speed, 1)
             return total_speed
