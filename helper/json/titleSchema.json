@@ -1,0 +1,8 @@
+{
+    "accuracy": 90,
+    "evasion": 85,
+    "mag_atk": 100,
+    "mag_def": 95,
+    "phys_atk": 110,
+    "phys_def": 105
+}

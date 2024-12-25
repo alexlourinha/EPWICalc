@@ -1,6 +1,6 @@
 import sqlite3
 
-database = 'calc_db'
+database = 'data/calc_db'
 create_table = """CREATE TABLE IF NOT EXISTS classes (
             id INTEGER PRIMARY KEY, 
             name TEXT NOT NULL, 

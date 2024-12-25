@@ -1,0 +1,11 @@
+{
+    "level": 6,
+    "hp": 1500,
+    "spirit": 200,
+    "mag_atk": 150,
+    "mag_def": 300,
+    "phys_atk": 160,
+    "phys_def": 350,
+    "atk_level": 2,
+    "def_level": 6
+}
