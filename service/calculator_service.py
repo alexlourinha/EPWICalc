@@ -13,6 +13,7 @@ from calculators.mag_pen_calc import calc_mag_pen
 from calculators.mana_calc import calculate_mana
 from calculators.phys_pen_calc import calc_phys_pen
 from calculators.slaying_calc import calc_slaying_level
+from calculators.soulforce_calc import calc_soulforce
 from calculators.speed_calc import calculate_speed
 from calculators.spirit_calc import calc_spirit
 from calculators.stat_point_calc import calculate_ability_points, calculate_vit, calculate_hp_equip_stat, \
@@ -98,6 +99,7 @@ def calculate_character_stats(char):
     warding_level = calc_warding_level(char)
     phys_penetration = calc_phys_pen(char)
     mag_penetration = calc_mag_pen(char)
+    soulforce = calc_soulforce(char)
 
 
     character = Character(char_class=char.get("char_class"),
@@ -122,7 +124,7 @@ def calculate_character_stats(char):
                           atk_level=atk_level,
                           def_level=def_level,
                           spirit=spirit,
-                          soulforce=0,
+                          soulforce=soulforce,
                           stealth_level=stealth_level,
                           detection_level=detection_level,
                           slaying_level=slaying_level,

@@ -7,9 +7,7 @@
   "strength": 200,
   "dexterity": 10,
   "magic": 5,
-  "boundary": {
-    "Shifting Sky": 10
-  },
+  "boundary": ["Shifting Sky", 10],
   "meridian": {
     "hp": 273,
     "mag_atk": 0,
@@ -20,6 +18,8 @@
   "weapon": {
     "name": "Might of the Dominator",
     "type": "melee",
+    "refine": 12,
+    "gear_type": "weapon",
     "atk_rate": 0.91,
     "weapon_range": 3.50,
     "req_class": "Barbarian",
@@ -41,6 +41,8 @@
   },
   "head": {
     "name": "Crown of Madness",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "",
@@ -66,6 +68,8 @@
   },
   "chest": {
     "name": "Chieftain's Breastplate(PVE)",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "Barbarian",
@@ -89,6 +93,8 @@
   },
   "legs": {
     "name": "Chieftain's Greaves(PVE)",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "Barbarian",
@@ -113,6 +119,8 @@
   },
   "feet": {
     "name": "Chieftain's Boots(PVE)",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "Barbarian",
@@ -136,6 +144,8 @@
   },
   "arms": {
     "name": "Chieftain's Bracers(PVE)",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "Barbarian",
@@ -159,6 +169,8 @@
   },
   "robe": {
     "name": "Wings of Ascension",
+    "gear_type": "armor",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "",
@@ -182,6 +194,8 @@
   },
   "belt": {
     "name": "Chieftain's Pendant(PVE)",
+    "gear_type": "ornament",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "Barbarian",
@@ -204,6 +218,8 @@
   },
   "necklace": {
     "name": "Badge of the Cube: Defiance",
+    "gear_type": "ornament",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "",
@@ -226,6 +242,8 @@
   },
   "ring_1": {
     "name": "Star's Destiny",
+    "gear_type": "ornament",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "",
@@ -248,6 +266,8 @@
   },
   "ring_2": {
     "name": "Star's Destiny",
+    "gear_type": "ornament",
+    "refine": 12,
     "requirements": [
       {
         "req_class": "",
@@ -287,6 +307,7 @@
   },
   "tome": {
     "name": "Necronomicon",
+    "gear_type": "tome",
     "requirements": [
       {
         "req_class": "",

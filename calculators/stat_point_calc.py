@@ -679,3 +679,22 @@ def calculate_mag_penetration(character):
 
     return result
 
+def calculate_soulforce(character):
+    soulforce_stats = [character.get("weapon").get("attributes").get("soulforce"),
+                     character.get("head").get("stats").get("soulforce"),
+                     character.get("chest").get("stats").get("soulforce"),
+                     character.get("legs").get("stats").get("soulforce"),
+                     character.get("feet").get("stats").get("soulforce"),
+                     character.get("arms").get("stats").get("soulforce"),
+                     character.get("robe").get("stats").get("soulforce"),
+                     character.get("belt").get("stats").get("soulforce"),
+                     character.get("necklace").get("stats").get("soulforce"),
+                     character.get("ring_1").get("stats").get("soulforce"),
+                     character.get("ring_2").get("stats").get("soulforce"),
+                     character.get("set_bonus").get("soulforce"),
+                     character.get("tome").get("stats").get("soulforce")]
+
+    result = add_valid_stats(soulforce_stats)
+
+    return result
+
