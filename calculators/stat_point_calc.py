@@ -475,4 +475,207 @@ def calculate_equip_evasion_perc(character):
 
     return result
 
+def calculate_equip_channeling_perc(character):
+    evasion_stats = [character.get("weapon").get("attributes").get("channeling"),
+                     character.get("head").get("stats").get("channeling"),
+                     character.get("chest").get("stats").get("channeling"),
+                     character.get("legs").get("stats").get("channeling"),
+                     character.get("feet").get("stats").get("channeling"),
+                     character.get("arms").get("stats").get("channeling"),
+                     character.get("robe").get("stats").get("channeling"),
+                     character.get("belt").get("stats").get("channeling"),
+                     character.get("necklace").get("stats").get("channeling"),
+                     character.get("ring_1").get("stats").get("channeling"),
+                     character.get("ring_2").get("stats").get("channeling"),
+                     character.get("set_bonus").get("channeling"),
+                     character.get("meridian").get("channeling"),
+                     character.get("title_stats").get("channeling"),
+                     character.get("tome").get("stats").get("channeling")]
+
+    result = add_valid_stats(evasion_stats)
+
+    return result
+
+def calculate_atk_level(character):
+    atk_level_stats = [character.get("weapon").get("attributes").get("atk_level"),
+                     character.get("head").get("stats").get("atk_level"),
+                     character.get("chest").get("stats").get("atk_level"),
+                     character.get("legs").get("stats").get("atk_level"),
+                     character.get("feet").get("stats").get("atk_level"),
+                     character.get("arms").get("stats").get("atk_level"),
+                     character.get("robe").get("stats").get("atk_level"),
+                     character.get("belt").get("stats").get("atk_level"),
+                     character.get("necklace").get("stats").get("atk_level"),
+                     character.get("ring_1").get("stats").get("atk_level"),
+                     character.get("ring_2").get("stats").get("atk_level"),
+                     character.get("set_bonus").get("atk_level"),
+                     character.get("constellation").get("atk_level_1"),
+                     character.get("constellation").get("atk_level_2"),
+                     character.get("constellation").get("atk_level_3"),
+                     character.get("constellation").get("atk_level_4"),
+                     character.get("constellation").get("atk_level_5"),
+                     character.get("constellation").get("atk_level_6"),
+                     character.get("constellation").get("atk_level_7"),
+                     character.get("glyph_1").get("atk_level"),
+                     character.get("glyph_2").get("atk_level"),
+                     character.get("glyph_3").get("atk_level"),
+                     character.get("glyph_4").get("atk_level"),
+                     character.get("glyph_5").get("atk_level"),
+                     character.get("glyph_6").get("atk_level"),
+                     character.get("meridian").get("atk_level"),
+                     character.get("title_stats").get("atk_level"),
+                     character.get("tome").get("stats").get("atk_level")]
+
+    result = add_valid_stats(atk_level_stats)
+
+    return result
+
+def calculate_def_level(character):
+    def_level_stats = [character.get("weapon").get("attributes").get("def_level"),
+                     character.get("head").get("stats").get("def_level"),
+                     character.get("chest").get("stats").get("def_level"),
+                     character.get("legs").get("stats").get("def_level"),
+                     character.get("feet").get("stats").get("def_level"),
+                     character.get("arms").get("stats").get("def_level"),
+                     character.get("robe").get("stats").get("def_level"),
+                     character.get("belt").get("stats").get("def_level"),
+                     character.get("necklace").get("stats").get("def_level"),
+                     character.get("ring_1").get("stats").get("def_level"),
+                     character.get("ring_2").get("stats").get("def_level"),
+                     character.get("set_bonus").get("def_level"),
+                     character.get("constellation").get("def_level_1"),
+                     character.get("constellation").get("def_level_2"),
+                     character.get("constellation").get("def_level_3"),
+                     character.get("constellation").get("def_level_4"),
+                     character.get("constellation").get("def_level_5"),
+                     character.get("constellation").get("def_level_6"),
+                     character.get("constellation").get("def_level_7"),
+                     character.get("glyph_1").get("def_level"),
+                     character.get("glyph_2").get("def_level"),
+                     character.get("glyph_3").get("def_level"),
+                     character.get("glyph_4").get("def_level"),
+                     character.get("glyph_5").get("def_level"),
+                     character.get("glyph_6").get("def_level"),
+                     character.get("meridian").get("def_level"),
+                     character.get("title_stats").get("def_level"),
+                     character.get("tome").get("stats").get("def_level")]
+
+    result = add_valid_stats(def_level_stats)
+
+    return result
+
+def calculate_spirit(character):
+    constellation_spirit = 0
+    def_orbs = 0
+
+    if all(character.get("constellation").get(f"mag_def_{i}") > 0 for i in range(1, 8)):
+        constellation_spirit = constellation_spirit + 100
+
+    for i in range(1, 8):
+        if character.get("constellation").get(f"atk_level_{i}") > 0:
+            def_orbs += 1
+
+    for i in range(1, 8):
+        if character.get("constellation").get(f"def_level_{i}") > 0:
+            def_orbs += 1
+
+    if def_orbs == 7:
+        constellation_spirit = constellation_spirit + 100
+
+
+    spirit_stats = [character.get("weapon").get("attributes").get("spirit"),
+                     character.get("head").get("stats").get("spirit"),
+                     character.get("chest").get("stats").get("spirit"),
+                     character.get("legs").get("stats").get("spirit"),
+                     character.get("feet").get("stats").get("spirit"),
+                     character.get("arms").get("stats").get("spirit"),
+                     character.get("robe").get("stats").get("spirit"),
+                     character.get("belt").get("stats").get("spirit"),
+                     character.get("necklace").get("stats").get("spirit"),
+                     character.get("ring_1").get("stats").get("spirit"),
+                     character.get("ring_2").get("stats").get("spirit"),
+                     character.get("set_bonus").get("spirit"),
+                     character.get("tome").get("stats").get("spirit"),
+                    constellation_spirit]
+
+    result = add_valid_stats(spirit_stats)
+
+    return result
+
+
+def calculate_slaying_level(character):
+    slaying_level_stats = [character.get("weapon").get("attributes").get("slaying_level"),
+                     character.get("head").get("stats").get("slaying_level"),
+                     character.get("chest").get("stats").get("slaying_level"),
+                     character.get("legs").get("stats").get("slaying_level"),
+                     character.get("feet").get("stats").get("slaying_level"),
+                     character.get("arms").get("stats").get("slaying_level"),
+                     character.get("robe").get("stats").get("slaying_level"),
+                     character.get("belt").get("stats").get("slaying_level"),
+                     character.get("necklace").get("stats").get("slaying_level"),
+                     character.get("ring_1").get("stats").get("slaying_level"),
+                     character.get("ring_2").get("stats").get("slaying_level"),
+                     character.get("set_bonus").get("slaying_level"),
+                     character.get("tome").get("stats").get("slaying_level")]
+
+    result = add_valid_stats(slaying_level_stats)
+
+    return result
+
+def calculate_warding_level(character):
+    warding_level_stats = [character.get("weapon").get("attributes").get("warding_level"),
+                     character.get("head").get("stats").get("warding_level"),
+                     character.get("chest").get("stats").get("warding_level"),
+                     character.get("legs").get("stats").get("warding_level"),
+                     character.get("feet").get("stats").get("warding_level"),
+                     character.get("arms").get("stats").get("warding_level"),
+                     character.get("robe").get("stats").get("warding_level"),
+                     character.get("belt").get("stats").get("warding_level"),
+                     character.get("necklace").get("stats").get("warding_level"),
+                     character.get("ring_1").get("stats").get("warding_level"),
+                     character.get("ring_2").get("stats").get("warding_level"),
+                     character.get("set_bonus").get("warding_level"),
+                     character.get("tome").get("stats").get("warding_level")]
+
+    result = add_valid_stats(warding_level_stats)
+
+    return result
+
+def calculate_phys_penetration(character):
+    phys_penetration_stats = [character.get("weapon").get("attributes").get("phys_penetration"),
+                     character.get("head").get("stats").get("phys_penetration"),
+                     character.get("chest").get("stats").get("phys_penetration"),
+                     character.get("legs").get("stats").get("phys_penetration"),
+                     character.get("feet").get("stats").get("phys_penetration"),
+                     character.get("arms").get("stats").get("phys_penetration"),
+                     character.get("robe").get("stats").get("phys_penetration"),
+                     character.get("belt").get("stats").get("phys_penetration"),
+                     character.get("necklace").get("stats").get("phys_penetration"),
+                     character.get("ring_1").get("stats").get("phys_penetration"),
+                     character.get("ring_2").get("stats").get("phys_penetration"),
+                     character.get("set_bonus").get("phys_penetration"),
+                     character.get("tome").get("stats").get("phys_penetration")]
+
+    result = add_valid_stats(phys_penetration_stats)
+
+    return result
+
+def calculate_mag_penetration(character):
+    mag_penetration_stats = [character.get("weapon").get("attributes").get("mag_penetration"),
+                     character.get("head").get("stats").get("mag_penetration"),
+                     character.get("chest").get("stats").get("mag_penetration"),
+                     character.get("legs").get("stats").get("mag_penetration"),
+                     character.get("feet").get("stats").get("mag_penetration"),
+                     character.get("arms").get("stats").get("mag_penetration"),
+                     character.get("robe").get("stats").get("mag_penetration"),
+                     character.get("belt").get("stats").get("mag_penetration"),
+                     character.get("necklace").get("stats").get("mag_penetration"),
+                     character.get("ring_1").get("stats").get("mag_penetration"),
+                     character.get("ring_2").get("stats").get("mag_penetration"),
+                     character.get("set_bonus").get("mag_penetration"),
+                     character.get("tome").get("stats").get("mag_penetration")]
+
+    result = add_valid_stats(mag_penetration_stats)
+
+    return result
 

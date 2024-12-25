@@ -7,6 +7,9 @@
   "strength": 200,
   "dexterity": 10,
   "magic": 5,
+  "boundary": {
+    "Shifting Sky": 10
+  },
   "meridian": {
     "hp": 273,
     "mag_atk": 0,
