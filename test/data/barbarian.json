@@ -9,11 +9,11 @@
   "magic": 5,
   "boundary": ["Shifting Sky", 10],
   "meridian": {
-    "hp": 273,
+    "hp": 329,
     "mag_atk": 0,
-    "mag_def": 78,
-    "phys_atk": 62,
-    "phys_def": 117
+    "mag_def": 94,
+    "phys_atk": 75,
+    "phys_def": 141
   },
   "weapon": {
     "name": "Might of the Dominator",
@@ -207,7 +207,7 @@
       }
     ],
     "stats": {
-      "soulforce": 3030,
+      "soulforce": 1500,
       "slaying_level": 10,
       "warding_level": 10,
       "mag_def": 1935,
@@ -378,7 +378,7 @@
     "level": 5,
     "hp": 237,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 29,
     "mag_def": 260,
     "phys_atk": 29,
     "phys_def": 344,
@@ -389,7 +389,7 @@
     "level": 5,
     "hp": 237,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 29,
     "mag_def": 260,
     "phys_atk": 29,
     "phys_def": 344,
@@ -400,7 +400,7 @@
     "level": 5,
     "hp": 237,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 29,
     "mag_def": 260,
     "phys_atk": 29,
     "phys_def": 344,
@@ -411,7 +411,7 @@
     "level": 5,
     "hp": 237,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 29,
     "mag_def": 260,
     "phys_atk": 29,
     "phys_def": 344,
@@ -422,7 +422,7 @@
     "level": 6,
     "hp": 264,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 55,
     "mag_def": 326,
     "phys_atk": 55,
     "phys_def": 432,
@@ -433,7 +433,7 @@
     "level": 6,
     "hp": 264,
     "spirit": 0,
-    "mag_atk": 0,
+    "mag_atk": 55,
     "mag_def": 326,
     "phys_atk": 55,
     "phys_def": 432,
@@ -453,6 +453,7 @@
     "Passive Defense 8",
     "Tiger Form - Sage",
     "Axe and Hammer Mastery - Sage",
-    "Copper Paperweight"
+    "Copper Paperweight",
+    "Strength of the Titans"
   ]
 }
