@@ -3,21 +3,8 @@ import sqlite3
 from calculators.mastery_buff_calc import mastery_calc
 from calculators.stat_point_calc import phys_atk_total_excl_weapon, mag_atk_total_excl_weapon, calculate_str, \
 	calculate_dex, calculate_mag
-from classes.weapon import *
-from helper.valid_stats_processor import add_valid_stats
 
 database = 'data/calc_db'
-
-# try:
-# 	with sqlite3.connect(database) as conn:
-# 		cursor = conn.cursor()
-# 		cursor.execute('SELECT * FROM classes')
-# 		rows = cursor.fetchall()
-# 		for row in rows:
-# 			print(row)
-#
-# except sqlite3.OperationalError as e:
-# 	print(e)
 
 def calculate_base_damage(attack_multiplier, weapon_attack):
 	min_phys_atk = round(attack_multiplier[0] * weapon_attack["phys_atk"][0])
@@ -64,6 +51,16 @@ def calculate_attack(character):
 	phys_atk_total = phys_atk_total_excl_weapon(character)
 	mag_atk_total = mag_atk_total_excl_weapon(character)
 
+	phys_attack_buff = 0
+	mag_attack_buff = 0
+
+
+	if any("Copper Paperweight" in x for x in character.get("active_buffs")):
+		phys_attack_buff = phys_attack_buff + 0.40
+		mag_attack_buff = mag_attack_buff + 0.40
+	if any("Strength of the Titans" in x for x in character.get("active_buffs")):
+		phys_attack_buff = phys_attack_buff + 0.50
+
 	str_stat = calculate_str(character)
 	dex_stat = calculate_dex(character)
 	mag_stat = calculate_mag(character)
@@ -72,7 +69,9 @@ def calculate_attack(character):
 											 dex_stat,
 											 mag_stat,
 											 str_stat,
-											 mastery, 0, 0)
+											 mastery,
+											 phys_attack_buff,
+											 mag_attack_buff)
 	weapon_atk = calculate_weapon_attack(weapon, phys_atk_total, mag_atk_total, 105)
 	result = calculate_base_damage(multiplier, weapon_atk)
 	return result

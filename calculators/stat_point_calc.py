@@ -595,6 +595,12 @@ def calculate_spirit(character):
                      character.get("ring_1").get("stats").get("spirit"),
                      character.get("ring_2").get("stats").get("spirit"),
                      character.get("set_bonus").get("spirit"),
+                    character.get("glyph_1").get("spirit"),
+                    character.get("glyph_2").get("spirit"),
+                    character.get("glyph_3").get("spirit"),
+                    character.get("glyph_4").get("spirit"),
+                    character.get("glyph_5").get("spirit"),
+                    character.get("glyph_6").get("spirit"),
                      character.get("tome").get("stats").get("spirit"),
                     constellation_spirit]
 

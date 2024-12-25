@@ -25,39 +25,11 @@ from classes.character import Character
 
 def calculate_character_hp_and_mana(char):
 
-    total_hp_buff = 0
-    total_mana_buff = 0
+    hp = calculate_hp(char)[0]
+    total_vit = calculate_hp(char)[1]
 
-    total_vit = calculate_vit(char)
-    total_mag = calculate_mag(char)
-
-    equip_hp = calculate_hp_equip_stat(char)
-    max_hp = calculate_max_hp(char)
-    equip_mana = calculate_mana_equip_stat(char)
-    max_mana = calculate_max_mana(char)
-
-    if any("Beast King's Inspiration - Sage" in x for x in char.get("active_buffs")):
-        total_hp_buff = total_hp_buff + 0.40
-    if any("Passive HP 3" in x for x in char.get("active_buffs")):
-        total_hp_buff = total_hp_buff + 0.15
-    if any("Tiger Form - Sage" in x for x in char.get("active_buffs")):
-        total_hp_buff = total_hp_buff + 0.40
-    if any("Copper Paperweight" in x for x in char.get("active_buffs")):
-        total_hp_buff = total_hp_buff + 0.10
-
-    hp = calculate_hp(level=char.get("level"),
-                 char_class=char.get("char_class"),
-                 vit=total_vit,
-                 buff_total=round(total_hp_buff, 2),
-                 equip_hp=equip_hp,
-                 equip_perc_increase=round(max_hp, 2))
-
-    mp = calculate_mana(level=char.get("level"),
-                 char_class=char.get("char_class"),
-                 mag=total_mag,
-                 buff_total=round(total_mana_buff, 2),
-                 equip_mana=equip_mana,
-                 equip_perc_increase=round(max_mana, 2))
+    mp = calculate_mana(char)[0]
+    total_mag = calculate_mana(char)[1]
 
     return [hp, total_vit, mp, total_mag]
 
