@@ -29,16 +29,10 @@ def calc_soulforce(character):
                 if item[1] is not None:
                     cursor.execute('SELECT * FROM soulforce WHERE gear_type = ?', (item[0],))
                     data = cursor.fetchone()
-                    print(item[1])
-                    print(data)
                     refine_soulforce = refine_soulforce + data[item[1]+2]
-                    print(refine_soulforce)
-
 
     except sqlite3.OperationalError as e:
         print(e)
-
-    print("total="+str(refine_soulforce))
 
     total_soulforce = (50 + character.get("level")) * character.get("level") + refine_soulforce + gear_soulforce
 
