@@ -14,7 +14,11 @@ def calc_spirit(character):
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM boundary WHERE name = ?', (boundary_char[0],))
             class_data = cursor.fetchone()
-            boundary_spirit = class_data[boundary_char[1]+1]
+            boundary_spirit = 0
+            print(boundary_char)
+            if boundary_char[0] != "None":
+                if boundary_char[1] != 0:
+                    boundary_spirit = class_data[boundary_char[1]+1]
 
             equip_spirit = calculate_spirit(character)
             buff_spirit = 0

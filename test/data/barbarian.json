@@ -32,7 +32,7 @@
     "phys_atk_min": 2180,
     "phys_atk_max": 3058,
     "attributes": {
-      "def_lvl": 27,
+      "def_level": 27,
       "acc_perc": 0.41,
       "magic": 17,
       "phys_def": 252,

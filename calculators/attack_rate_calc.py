@@ -10,9 +10,14 @@ def calc_atk_rate(character) :
     atk_rate = 5
 
     if weapon:
-        weapon_int = round(1/weapon.get("atk_rate"), 2)
+        weapon_int = 0
+        if weapon.get("atk_rate") != 0:
+            weapon_int = round(1/weapon.get("atk_rate"), 2)
         interval = weapon_int - equip_int
-        atk_rate = 1/interval
+        if interval > 0:
+            atk_rate = 1/interval
+        else:
+            atk_rate = 0
 
 
     return round(atk_rate, 2)

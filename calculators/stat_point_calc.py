@@ -2,7 +2,7 @@ from helper.valid_stats_processor import add_valid_stats
 
 
 def calculate_ability_points(level, past_life_1, past_life_2):
-    past_life_stat_per_level = {100: 20, 101: 25, 102: 32, 103: 42, 104: 56, 105: 76}
+    past_life_stat_per_level = {0:0, 100: 20, 101: 25, 102: 32, 103: 42, 104: 56, 105: 76}
     base_points = (level - 1) * 5
     life_points = past_life_stat_per_level[past_life_1] + past_life_stat_per_level[past_life_2]
     return base_points + life_points
