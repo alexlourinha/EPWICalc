@@ -9,7 +9,8 @@
 
 ## API expected query schema:
 
-```{
+```
+{
   "char_class": "Barbarian",
   "level": 105,
   "past_life_1": 103,
@@ -467,11 +468,13 @@
     "Copper Paperweight",
     "Strength of the Titans"
   ]
-}```
+}
+```
 
 ## API response schema:
 
-```{
+```
+{
   "char_class": "Barbarian",
   "level": 105,
   "past_life_1": 103,
@@ -512,4 +515,5 @@
   "mag_penetration": 0,
   "casting_time": 5,
   "reputation": 300000
-}```
+}
+```
